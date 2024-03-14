@@ -29,7 +29,7 @@ export function EditIssueForm({ issue }) {
       className="flex flex-col gap-2 text-left mt-4 max-w-96"
       onSubmit={onSubmit}
     >
-      <h2>New Issue</h2>
+      <h2>Edit Issue {issue.title}</h2>
       <label>
         Title:
         <input
