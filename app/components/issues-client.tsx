@@ -15,7 +15,7 @@ export function IssuesClient({ issues }) {
           <IssuesListItem
             key={issue.id}
             issue={issue}
-            onClick={() => setSelectedIssue(issue)}
+            onClick={(issue) => setSelectedIssue(issue)}
             isSelected={issue.id === selectedIssue?.id}
           />
         ))}
