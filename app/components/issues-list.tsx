@@ -1,20 +1,16 @@
-function IssuesListItem({ issue }) {
+export function IssuesListItem({ issue, onClick, isSelected }) {
   return (
-    <li>
+    <li onClick={onClick} className={isSelected ? "bg-gray-200" : ""}>
       {issue.title} - {issue.description}
     </li>
   );
 }
 
-export function IssuesList({ issues }) {
+export function IssuesList({ children }) {
   return (
     <>
       <h2>Issues</h2>
-      <ul>
-        {issues.map((issue) => (
-          <IssuesListItem key={issue.id} issue={issue} />
-        ))}
-      </ul>
+      <ul>{children}</ul>
     </>
   );
 }

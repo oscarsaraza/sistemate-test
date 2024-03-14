@@ -1,5 +1,4 @@
-import { IssuesList } from "./components/issues-list";
-import { NewIssueForm } from "./components/new-issue-form";
+import { IssuesClient } from "./components/issues-client";
 
 export default async function Home() {
   const response = await fetch("http://localhost:3000/api/issues", {
@@ -7,10 +6,5 @@ export default async function Home() {
   });
   const issues = await response.json();
 
-  return (
-    <div>
-      <IssuesList issues={issues} />
-      <NewIssueForm />
-    </div>
-  );
+  return <IssuesClient issues={issues} />;
 }
