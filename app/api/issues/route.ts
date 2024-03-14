@@ -5,6 +5,8 @@ import {
   updateIssue,
 } from "@/app/lib/data";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   const issues = getAllIssues();
   return Response.json(issues);
