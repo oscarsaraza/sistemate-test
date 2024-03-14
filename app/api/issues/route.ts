@@ -30,5 +30,5 @@ export async function DELETE(request: Request) {
   const data = await request.json();
   const deletedIssue = deleteIssue(data.id);
 
-  return Response.json(deleteIssue);
+  return Response.json(deletedIssue);
 }

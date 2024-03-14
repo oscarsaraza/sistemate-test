@@ -1,7 +1,19 @@
 export function IssuesListItem({ issue, onClick, isSelected }) {
+  const onDelete = async (issueId) => {
+    await fetch("/api/issues", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: issueId }),
+    });
+  };
+
   return (
-    <li onClick={onClick} className={isSelected ? "bg-gray-200" : ""}>
-      {issue.title} - {issue.description}
+    <li
+      onClick={() => onClick(isSelected ? null : issue)}
+      className={isSelected ? "bg-gray-200" : ""}
+    >
+      {issue.title} - {issue.description}{" "}
+      {isSelected && <button onClick={() => onDelete(issue.id)}>🚮</button>}
     </li>
   );
 }
