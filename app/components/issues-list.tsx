@@ -8,10 +8,13 @@ function IssuesListItem({ issue }) {
 
 export function IssuesList({ issues }) {
   return (
-    <ul>
-      {issues.map((issue) => (
-        <IssuesListItem key={issue.id} issue={issue} />
-      ))}
-    </ul>
+    <>
+      <h2>Issues</h2>
+      <ul>
+        {issues.map((issue) => (
+          <IssuesListItem key={issue.id} issue={issue} />
+        ))}
+      </ul>
+    </>
   );
 }
