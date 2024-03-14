@@ -20,9 +20,9 @@ export function IssuesListItem({ issue, onClick, isSelected }) {
 
 export function IssuesList({ children }) {
   return (
-    <>
+    <div className="max-w-96">
       <h2>Issues</h2>
       <ul>{children}</ul>
-    </>
+    </div>
   );
 }
